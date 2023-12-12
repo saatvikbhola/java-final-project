@@ -2,9 +2,9 @@
 
 ## structure of the file
 
-java-final-project
-  |__database
-  |    |__DatabaseManager.java
+java-final-project    
+  |__database    
+  |    |__DatabaseManager.java   
   |
   |__model
   |   |__Course.java
