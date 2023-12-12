@@ -11,7 +11,7 @@ public class DatabaseManager {
     private static Connection con;
     private static Statement stmt;
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/project";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:/project";
     private static final String USER = "root";
     private static final String PASSWORD = "password";
 
