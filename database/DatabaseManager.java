@@ -21,6 +21,7 @@ public class DatabaseManager {
             con = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
             stmt = con.createStatement();
             createTable();
+            System.out.println("Database initialized successfully.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,6 +35,7 @@ public class DatabaseManager {
                     "course_name VARCHAR(255)" +
                     ")";
             stmt.executeUpdate(createTableQuery);
+            System.out.println("Table created successfully.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -47,6 +49,7 @@ public class DatabaseManager {
             preparedStatement.setString(2, studentName);
             preparedStatement.setString(3, course);
             preparedStatement.executeUpdate();
+            System.out.println("Data inserted successfully.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -59,6 +62,7 @@ public class DatabaseManager {
             preparedStatement.setInt(1, studentId);
             preparedStatement.setString(2, course);
             preparedStatement.executeUpdate();
+            System.out.println("Data deleted successfully.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,6 +76,7 @@ public class DatabaseManager {
             if (con != null) {
                 con.close();
             }
+            System.out.println("Database closed successfully.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
