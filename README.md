@@ -31,7 +31,10 @@ this projects mimics the working of a university management system where you can
 ## how to run on terminal 
 
 Use this line for compiling 
-`javac -cp .:path/to/mysql-connector-java-x.x.xx.jar database/DatabaseManager model/Course.java model/Student.java main/Main.java`
+`javac -cp ".:path/to/mysql-connector-java-x.x.xx.jar" database/DatabaseManager model/Course.java model/Student.java main/Main.java`
 
 Use this for executing 
-`java -cp .:path/to/mysql-connector-java-x.x.xx.jar main.Main`
+`java -cp ".:path/to/mysql-connector-java-x.x.xx.jar" main.Main`
+
+> [!IMPORTANT]
+> change "path/to/mysql-connector-java-x.x.xx.jar" to the actual path of the jdbc connector 
