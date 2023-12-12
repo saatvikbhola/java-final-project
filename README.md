@@ -1,7 +1,7 @@
 # java project for 3rd semester finals
 
 ## structure of the file
-
+<br>
 java-final-project    
   |__database    
   |    |__DatabaseManager.java   
