@@ -4,7 +4,7 @@
 <br>
 java-final-project<br>
 ‎ ‎ |__database<br>    
-‎ ‎ |‎ ‎ ‎ ‎ |__DatabaseManager.java<br>   
+‎ ‎ |‎   |__DatabaseManager.java<br>   
 ‎ ‎ |<br>
 ‎ ‎ |__model<br>
 ‎ ‎ |   |__Course.java<br>
