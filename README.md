@@ -1,4 +1,5 @@
 # java project for 3rd semester finals
+this projects mimics the working of a university management system where you can use admin and student functions with the implementation of database using the jdbc driver
 
 ## structure of the file
 
@@ -28,3 +29,7 @@
 
 
 ## how to run on terminal 
+
+```bash
+javac -cp .:path/to/mysql-connector-java-x.x.xx.jar YourProgram.java
+java -cp .:path/to/mysql-connector-java-x.x.xx.jar YourProgram
