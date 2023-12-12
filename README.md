@@ -38,4 +38,6 @@ Use this for executing
 
 > [!IMPORTANT]
 > change "path/to/mysql-connector-java-x.x.xx.jar" to the actual path of the jdbc connector on your system when running the above line
+> change the 'jdbc_url', 'user', 'password' acording to your database
+
 
