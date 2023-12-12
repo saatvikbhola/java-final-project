@@ -15,65 +15,69 @@ public class DatabaseManager {
     private static final String USER = "root";
     private static final String PASSWORD = "password";
 
-    public static void initializeDatabase() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
-            stmt = con.createStatement();
-            createTable();
-        } catch (Exception e) {
-            System.out.println("Error initializing database: " + e.getMessage());
-        }
+    private static void initializeDatabase() {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        con = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
+        stmt = con.createStatement();
+        createTable();
+        System.out.println("Database initialized successfully.");
+    } catch (Exception e) {
+        System.err.println("Error initializing database: " + e.getMessage());
     }
+}
 
-    public static void createTable() {
-        try {
-            String createTableQuery = "CREATE TABLE IF NOT EXISTS student_courses (" +
-                    "student_id INT, " +
-                    "student_name VARCHAR(255), " +
-                    "course_name VARCHAR(255)" +
-                    ")";
-            stmt.executeUpdate(createTableQuery);
-        } catch (SQLException e) {
-            System.out.println("Error creating table: " + e.getMessage());
-        }
+public static void createTable() {
+    try {
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS student_courses (" +
+                "student_id INT, " +
+                "student_name VARCHAR(255), " +
+                "course_name VARCHAR(255)" +
+                ")";
+        stmt.executeUpdate(createTableQuery);
+        System.out.println("Table created successfully.");
+    } catch (SQLException e) {
+        System.err.println("Error creating table: " + e.getMessage());
     }
+}
 
-    public static void insertData(int studentId, String studentName, String course) {
-        try {
-            String insertDataQuery = "INSERT INTO student_courses VALUES (?, ?, ?)";
-            PreparedStatement preparedStatement = con.prepareStatement(insertDataQuery);
-            preparedStatement.setInt(1, studentId);
-            preparedStatement.setString(2, studentName);
-            preparedStatement.setString(3, course);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error inserting data: " + e.getMessage());
-        }
+public static void insertData(int studentId, String studentName, String course) {
+    try {
+        String insertDataQuery = "INSERT INTO student_courses VALUES (?, ?, ?)";
+        PreparedStatement pstmt = con.prepareStatement(insertDataQuery);
+        pstmt.setInt(1, studentId);
+        pstmt.setString(2, studentName);
+        pstmt.setString(3, course);
+        pstmt.executeUpdate();
+        System.out.println("Data inserted successfully.");
+    } catch (SQLException e) {
+        System.err.println("Error inserting data: " + e.getMessage());
     }
+}
 
-    public static void deleteData(int studentId, String course) {
-        try {
-            String deleteDataQuery = "DELETE FROM student_courses WHERE student_id=? AND course_name=?";
-            PreparedStatement preparedStatement = con.prepareStatement(deleteDataQuery);
-            preparedStatement.setInt(1, studentId);
-            preparedStatement.setString(2, course);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error deleting data: " + e.getMessage());
-        }
+public static void deleteData(int studentId, String course) {
+    try {
+        String deleteDataQuery = "DELETE FROM student_courses WHERE student_id=? AND course_name=?";
+        PreparedStatement pstmt = con.prepareStatement(deleteDataQuery);
+        pstmt.setInt(1, studentId);
+        pstmt.setString(2, course);
+        pstmt.executeUpdate();
+        System.out.println("Data deleted successfully.");
+    } catch (SQLException e) {
+        System.err.println("Error deleting data: " + e.getMessage());
     }
+}
 
-    public static void closeDatabase() {
-        try {
-            if (stmt != null) {
-                stmt.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        } catch (SQLException e) {
-            System.out.println("Error closing database: " + e.getMessage());
+private static void closeDatabase() {
+    try {
+        if (stmt != null) {
+            stmt.close();
         }
+        if (con != null) {
+            con.close();
+        }
+        System.out.println("Database closed successfully.");
+    } catch (SQLException e) {
+        System.err.println("Error closing database: " + e.getMessage());
     }
 }
