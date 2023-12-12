@@ -37,4 +37,5 @@ Use this for executing
 `java -cp ".:path/to/mysql-connector-java-x.x.xx.jar" main.Main`
 
 > [!IMPORTANT]
-> change "path/to/mysql-connector-java-x.x.xx.jar" to the actual path of the jdbc connector 
+> change "path/to/mysql-connector-java-x.x.xx.jar" to the actual path of the jdbc connector on your system when running the above line
+
