@@ -42,11 +42,11 @@ public class DatabaseManager {
     public static void insertData(int studentId, String studentName, String course) {
         try {
             String insertDataQuery = "INSERT INTO student_courses VALUES (?, ?, ?)";
-            PreparedStatement preparedStatement = con.prepareStatement(insertDataQuery);
-            preparedStatement.setInt(1, studentId);
-            preparedStatement.setString(2, studentName);
-            preparedStatement.setString(3, course);
-            preparedStatement.executeUpdate();
+            PreparedStatement pstmt = con.prepareStatement(insertDataQuery);
+            pstmt.setInt(1, studentId);
+            pstmt.setString(2, studentName);
+            pstmt.setString(3, course);
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -55,10 +55,10 @@ public class DatabaseManager {
     public static void deleteData(int studentId, String course) {
         try {
             String deleteDataQuery = "DELETE FROM student_courses WHERE student_id=? AND course_name=?";
-            PreparedStatement preparedStatement = con.prepareStatement(deleteDataQuery);
-            preparedStatement.setInt(1, studentId);
-            preparedStatement.setString(2, course);
-            preparedStatement.executeUpdate();
+            PreparedStatement pstmt = con.prepareStatement(deleteDataQuery);
+            pstmt.setInt(1, studentId);
+            pstmt.setString(2, course);
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
