@@ -22,7 +22,7 @@ public class DatabaseManager {
             stmt = con.createStatement();
             createTable();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error initializing database: " + e.getMessage());
         }
     }
 
@@ -35,7 +35,7 @@ public class DatabaseManager {
                     ")";
             stmt.executeUpdate(createTableQuery);
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error creating table: " + e.getMessage());
         }
     }
 
@@ -48,7 +48,7 @@ public class DatabaseManager {
             preparedStatement.setString(3, course);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error inserting data: " + e.getMessage());
         }
     }
 
@@ -60,7 +60,7 @@ public class DatabaseManager {
             preparedStatement.setString(2, course);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error deleting data: " + e.getMessage());
         }
     }
 
@@ -73,7 +73,7 @@ public class DatabaseManager {
                 con.close();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error closing database: " + e.getMessage());
         }
     }
 }
