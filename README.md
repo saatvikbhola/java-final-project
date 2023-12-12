@@ -3,16 +3,28 @@
 ## structure of the file
 
 <ul>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item
+  <li>java-final-project
     <ul>
-      <li>Indented item</li>
-      <li>Indented item</li>
+      <li>database
+        <ul>
+          <li>DatabaseManager.java</li>
+        </ul>
+      </li>
+      <li>model
+        <ul>
+          <li>Course.java</li>
+          <li>Student.java</li>
+        </ul>
+      </li>
+      <li>main
+        <ul>
+          <li>Main.java</li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li>Fourth item</li>
 </ul>
+
 
 
 ## how to run on terminal 
