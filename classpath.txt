@@ -1,0 +1,1 @@
+".;C:\Program Files\Java\jdk-20\mysql-connector-j-8.2.0.jar"
