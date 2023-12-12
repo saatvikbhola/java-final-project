@@ -1,7 +1,7 @@
-# java project for 3rd semester finals
+# Java Project for 3rd Semester Finals
 this projects mimics the working of a university management system where you can use admin and student functions with the implementation of database using the jdbc driver
 
-## structure of the file
+## Structure of the File
 
 <ul>
   <li>java-final-project
@@ -28,7 +28,7 @@ this projects mimics the working of a university management system where you can
 
 
 
-## how to run on terminal 
+## How to run on terminal 
 
 Use this line for compiling 
 `javac -cp ".:path/to/mysql-connector-java-x.x.xx.jar" database/DatabaseManager model/Course.java model/Student.java main/Main.java`
